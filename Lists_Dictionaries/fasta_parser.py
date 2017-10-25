@@ -34,10 +34,15 @@ if len(sys.argv) <= 1:
 # get the filename from the cmdline      
 filename = sys.argv[1]
 with open(filename,"r") as f:
-    seqs = dict(aspairs(f))
+    pairs = aspairs(f)
+    seqs  = dict(pairs)
+#    seqs = dict(aspairs(f))
             
 # iterate through the sequences
 n=0
+#for seqid in seqs:
+#    print("id is ",seqid, "seq is ",seqs[seqid])
+    
 for k,v in seqs.items():
     print( "id is ",k,"seq is",v)
     n += 1
