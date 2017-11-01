@@ -15,4 +15,7 @@ for seq_record in SeqIO.parse( filename , "genbank"):
     print(seq_record.id)
     for feature in seq_record.features:
         print("\t",feature.type,feature.location)
-        print("\t",feature.type,feature.location.start, feature.location.end, feature.location.strand)
+        print("\t",feature.type,feature.location.start,
+              feature.location.end, feature.location.strand)
+        if feature.type == "5'UTR":
+            print(seq_record.seq[feature.location.start:feature.location.end])

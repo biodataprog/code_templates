@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 import sys
-import Bio
+#import Bio
 from Bio import SeqIO
 from Bio.Seq import Seq
-    
 
 # seqfile 
 if len(sys.argv) != 2:
@@ -16,3 +15,4 @@ for seq_record in SeqIO.parse( filename , "fasta"):
     print(repr(seq_record.seq))
     print(seq_record.seq)
     print(len(seq_record))
+    print("First 3 bases are ",seq_record.seq[0:3])
