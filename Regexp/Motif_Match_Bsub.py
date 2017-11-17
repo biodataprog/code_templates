@@ -7,7 +7,7 @@ import re
 # a random DNA sequence generator
 def read_DNA (file):
     DNA = ""
-    fasta_pat = re.compile(">")
+    fasta_pat = re.compile("^>")
 
     with open(file, 'r') as f:
         seenheader = 0 

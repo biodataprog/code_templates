@@ -4,7 +4,7 @@
 # import the regular expression library
 import re
 import random
-random.seed(11011) # initialize the starting seed - we will all have basically same result this way
+random.seed(11012) # initialize the starting seed - we will all have basically same result this way
 
 # a random DNA sequence generator
 def rand_DNA (length):

@@ -53,6 +53,7 @@ ATCGTTTTACAGGCTCGCTTTTTTAGTGAAATTGTAAAAAAATTGCCGATGGCAACTGTAGAAATTGAAGTCCAAAATCA
 print( DNA)
 # remove the white space
 DNA = re.sub("\s+","",DNA)
+
 print(DNA)
 for RE in RestrictionEnzymes:
     pattern = re.compile(RE)
