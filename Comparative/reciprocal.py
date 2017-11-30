@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# blastp -query E_coli_K12.pep -db S_enterica.pep -outfmt 6 -evalue 1e-5 -num_threads 16 -out Ecol-vs-Sent.BLASTP
+#blastp -query S_enterica.pep -db E_coli_K12.pep -outfmt 6 -evalue 1e-5 -num_threads 16 -out Sent-vs-Ecol.BLASTP
+
 file1 = "Ecol-vs-Sent.BLASTP"
 file2 = "Sent-vs-Ecol.BLASTP"
 
