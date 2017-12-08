@@ -7,7 +7,7 @@ module load samtools
 module load tabix
 
 if [ ! -f Ecoli.vcf ]; then
- bcftools mpileup -Ou -f E_coli_K12.fa DnaK_42C.bam | bcftools call -vmO z -o Ecoli.vcf.gz
+ bcftools mpileup -Ou -f E_coli_K12.fa DnaK_42C.bam | bcftools call  --ploidy-file ploidy.txt -vmO z -o Ecoli.vcf.gz
 fi
 
 # This VCF file is the locations of the SNPs and INDELs
