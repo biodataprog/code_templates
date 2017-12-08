@@ -14,7 +14,8 @@ if [ ! -f DnaK_42C.sam ]; then
  bwa mem -t 8 -R '@RG\tID:DnaK42C\tSM:DnaK_42C' E_coli_K12.fa SRR3477089_1.fastq.gz SRR3477089_2.fastq.gz > DnaK_42C.sam
 fi
 
-if [ ! -f DnaK_42C.bam ]; then
- samtools view -b DnaK_42C.sam > DnaK_42C.unsrt.bam
- samtools sort --threads 8 -o DnaK_42C.bam DnaK_42C.unsrt.bam
+if [ ! -f DnaK_42C.bam ]; then 
+ samtools fixmate -O bam DnaK_42C.sam DnaK_42C.unsrt.bam
+ samtools sort -O bam  --threads 8 -T /scratch/DnaK42 -o DnaK_42C.bam DnaK_42C.unsrt.bam
+ samtools index DnaK_42C.bam
 fi
